@@ -59,6 +59,7 @@ io.on("connection", (socket) => {
     }
   });
 });
-server.listen(port, () => {
+server.listen(port, (req, res) => {
   console.log("server is listining at port ", port);
+  //res.send("All gud");
 });
