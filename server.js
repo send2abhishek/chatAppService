@@ -2,7 +2,7 @@ const app = require("./index");
 const http = require("http");
 const socketio = require("socket.io");
 const server = http.createServer(app);
-const port = 3001;
+const port = process.env.PORT || 3001;
 const io = socketio(server);
 const {
   addUser,
