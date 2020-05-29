@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-
+const router = require("./router/router");
 //cors
 app.use((req, res, next) => {
   res.header("Access-Control-Allow-Origin", "*");
@@ -12,10 +12,6 @@ app.use((req, res, next) => {
   next();
 });
 
-app.get("/", (req, res) => {
-  res.status(200).json({
-    mesaage: "get Request",
-  });
-});
+app.use("/", router);
 
 module.exports = app;
